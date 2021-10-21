@@ -1,0 +1,11 @@
+---
+
+- name: Install common dependencies tags-install_common_dependencies
+  apt:
+    name:
+            - vim
+            - git
+            - unzip  
+    state: latest
+    default_release: squeeze-backports
+    update_cache: yes

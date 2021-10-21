@@ -1,0 +1,10 @@
+---
+
+
+- name: setup webserver for some microservices
+  hosts: webserver1
+  user: root
+  roles:
+    - common        
+    - motd
+  become: true

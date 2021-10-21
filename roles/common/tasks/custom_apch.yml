@@ -1,0 +1,56 @@
+---
+
+- name: Update all packages to their latest version
+  apt:
+    name: "*"
+    state: latest
+
+- name: Upgrade the OS (apt-get dist-upgrade)
+  apt:
+    upgrade: dist
+
+- name: Run the equivalent of "apt-get update" as a separate step
+  apt:
+    update_cache: yes
+
+- name: Only run "update_cache=yes" if the last one is more than 3600 seconds ago
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Pass options to dpkg on run
+  apt:
+    upgrade: dist
+    update_cache: yes
+    dpkg_options: 'force-confold,force-confdef'
+
+- name: Install a .deb package
+  apt:
+    deb: /tmp/mypackage.deb
+
+- name: Install the build dependencies for package "foo"
+  apt:
+    pkg: foo
+    state: build-dep
+
+- name: Install a .deb package from the internet
+  apt:
+    deb: https://example.com/python-ppq_0.1-1_all.deb
+
+- name: Remove useless packages from the cache
+  apt:
+    autoclean: yes
+
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: yes
+
+# Sometimes apt tasks fail because apt is locked by an autoupdate or by a race condition on a thread.
+# To check for a lock file before executing, and keep trying until the lock file is released:
+- name: Install packages only when the apt process is not locked
+  apt:
+    name: foo
+    state: present
+  register: apt_action
+  retries: 100
+  until: apt_action is success or ('Failed to lock apt for exclusive operation' not in apt_action.msg and '/var/lib/dpkg/lock' not in apt_action.msg)
