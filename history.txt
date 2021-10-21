@@ -1,0 +1,387 @@
+    1  hostname
+    2  ifconfig
+    3  hostnamectl set-hostname puppetagent1.test.org 
+    4  vim /etc/hosts
+    5  ping puppetmaster.test.org
+    6  vim /etc/hosts
+    7  ping puppetmaster.test.org
+    8  vim /etc/hosts
+    9  hostname
+   10  apt-get update
+   11  apt-get install puppet
+   12  service puppet status
+   13  vim /etc/puppet/puppet.conf 
+   14  Puppet agent -t
+   15  puppet agent -t
+   16  puppet agent -td
+   17  vim /etc/puppet/puppet.conf 
+   18  puppet agent -td
+   19  puppet agent --enable
+   20  puppet agent --server puppetmaster.test.org
+   21  vim /etc/puppet/puppet.conf 
+   22  puppet agent -td
+   23  echo 172.31.22.177 puppetmaster.test.org >> /etc/
+   24  echo 172.31.22.177 puppetmaster.test.org >> /etc/hosts
+   25  vim /etc/hosts
+   26  telnet puppetmaster.test.org 8140
+   27  puppet agent -td
+   28  hostname
+   29  vim /etc/puppet/puppet.conf 
+   30  telnet puppetmaster.test.org 8140
+   31  vim /etc/hosts
+   32  telnet puppetmaster.test.org 8140
+   33  puppet agent -td
+   34  vim /etc/puppet/puppet.conf 
+   35  puppet status
+   36  service puppet status
+   37  service puppet start
+   38  service puppet status
+   39  puppet agent -td
+   40  vim /etc/hosts
+   41  vim /etc/puppet/puppet.conf 
+   42  puppet agent -t
+   43  puppet agent -td
+   44  factor
+   45  puppet agent -td
+   46  factor
+   47  puppet --version
+   48  ssh-copy-id 172.31.34.249
+   49  top
+   50  ifconfig
+   51  vim /etc/hosts
+   52  hostname
+   53  vim /etc/hosts
+   54  top
+   55  apt-get update
+   56  apt-get install epel-release -y
+   57  apt-get install python-pip -y
+   58  pip -v
+   59  pip --version
+   60  pip install --upgrade pip==18.1
+   61  pip --version
+   62  pip -v
+   63  pip --version
+   64  pip install --upgrade pip==18.1
+   65  apt-get erase python-pip
+   66  apt remove python-pip
+   67  pip install --upgrade pip==18.1
+   68  apt-get install python-pip -y
+   69  pip install --upgrade pip==18.1
+   70  apt-getupdate pip==18.1
+   71  apt-get update pip==18.1
+   72  pip install --upgrade pip
+   73  pip install -U pi
+   74  apt install python3-pip
+   75  pip --version
+   76  apt remove python-pip
+   77  apt install python3-pip
+   78  pip --version
+   79  python3 --version
+   80  sudo apt install python3-p
+   81  sudo apt install python3-pip
+   82  pip3 --version
+   83  pip install ansible
+   84  pip3 install ansible
+   85  ansible --version
+   86  mkdir /etc/ansible
+   87  cd /etc/ansible/
+   88  vim hosts
+   89  ifconfig
+   90  vim hosts
+   91  ansible all --list-hosts 
+   92  vim hosts
+   93  ansible all --list-hosts 
+   94  ansible webserver1 -a 'date'
+   95  ssh key-gen -t rsa
+   96  ssh-keygen -t rsa
+   97  ssh-copy-id 172.31.34.249
+   98  ssh-keygen -t rsa
+   99  ssh-copy-id 172.31.34.249
+  100  ifconfig
+  101  ping webserver1.pratik.in
+  102  ssh-copy-id 172.31.34.249
+  103  ansible webserver1 -a "uptime"
+  104  cat /root/.ssh/id_rsa.pub 
+  105  ssh-copy-id 172.31.34.249
+  106  ansible webserver1 -a "uptime"
+  107  ansible webserver1 -a "hostname"
+  108  ansible webserver1 -a "date" >> output.txt
+  109  ll
+  110  cat output.txt 
+  111  ansible webserver1 -m shell -a "date" 
+  112  top
+  113  ansible webserver1 -m copy "src=/etc/hosts dest=/tmp/hosts" 
+  114  ansible webserver1 -m copy -a "src=/etc/hosts dest=/tmp/hosts" 
+  115  hostnamectl set-hostname ansibleworkstation.pratik.in
+  116  hostname
+  117  bsdh
+  118  bash
+  119  ansible webserver1 -m copy -a "src=/etc/hosts dest=/tmp/hosts" 
+  120  top
+  121  ansible webserver1 -a "shell" 
+  122  ansible webserver1 -a "bash" 
+  123  ansible webserver1 -a "shell" 
+  124  top
+  125  ansible webserver1 -m file -a "dest=/tmp/hosts state=absent" 
+  126  top
+  127  df -h
+  128  mkdir repo
+  129  cd repo/
+  130  mkdir infra-automation
+  131  cd infra-automation/
+  132  apt-get install git -y
+  133  git -v
+  134  git --version
+  135  git init
+  136  git status
+  137  top
+  138  mkdir roles
+  139  cd roles/
+  140  mkdir commanrole
+  141  cd commanrole/
+  142  mkdir files tasks meta handlers templates vars
+  143  top
+  144  pwd
+  145  cd repo/infra-automation/roles/commanrole/tasks/
+  146  ll
+  147  vim main.yml
+  148  ll
+  149  vim common_pkg.yml
+  150  top
+  151  vim common_pkg.yml
+  152  top
+  153  vim common_pkg.yml
+  154  top
+  155  vim common_pkg.yml
+  156  top
+  157  ansible ansibleworkstation -m setup | grep pkg
+  158  python3 --version
+  159  apt-get upgrade python3-pip
+  160  python3 --version
+  161  ansible ansibleworkstation -m setup | grep pkg
+  162  vim common_pkg.yml
+  163  top
+  164  cd ../../../
+  165  ll
+  166  pwd
+  167  vim webserver1.yml
+  168  ansible-playbook webserver1.yml 
+  169  vim webserver1.yml
+  170  ansible-playbook webserver1.yml 
+  171  vim webserver1.yml
+  172  ansible-playbook webserver1.yml 
+  173  cd roles/
+  174  ll
+  175  cd ../
+  176  vim webserver1.yml 
+  177  ansible-playbook webserver1.yml 
+  178  vim /root/.ssh/id_rsa.pub 
+  179  ansible-playbook webserver1.yml 
+  180  vim webserver1.yml 
+  181  ansible-playbook webserver1.yml 
+  182  ll
+  183  cd roles/
+  184  ll
+  185  cd commanrole/
+  186  ll
+  187  cd tasks/
+  188  ll
+  189  vim main.yml 
+  190  ll
+  191  ansible-playbook webserver1.yml 
+  192  ansible-playbook ../../commanrole/webserver1.yml 
+  193  ansible-playbook ../../../webserver1.yml 
+  194  cp common_pkg.yml ../../../.
+  195  ansible-playbook ../../../webserver1.yml 
+  196  cd ../
+  197  ll
+  198  cd ../
+  199  ll
+  200  mv commanrole/ common
+  201  ll
+  202  cd common/
+  203  ll
+  204  cd tasks/
+  205  ll
+  206  vim main.yml 
+  207  cd ../../../
+  208  ll
+  209  vimm webserver1.yml 
+  210  vim webserver1.yml 
+  211  ansible-playbook webserver1.yml 
+  212  vim webserver1.yml 
+  213  ansible-playbook webserver1.yml 
+  214  ll
+  215  vim common_pkg.yml 
+  216  ansible-playbook webserver1.yml 
+  217  vim roles/common/tasks/common_pkg.yml 
+  218  ansible-playbook webserver1.yml 
+  219  ll
+  220  cd roles/common/
+  221  cd tasks/
+  222  vim common_pkg.yml 
+  223  vim cm_pkg.yml
+  224  vim main.yml 
+  225  cd ../../../../
+  226  ll
+  227  cd infra-automation/
+  228  ll
+  229  vim webserver1.yml 
+  230  ansible-playbook webserver1.yml 
+  231  ll
+  232  cd roles/
+  233  mkdir motd
+  234  cd motd/
+  235  mkdir defaults tasks templates
+  236  cd tasks/
+  237  ll
+  238  vim main.yml
+  239  cd ../
+  240  ll
+  241  cd defaults/
+  242  ll
+  243  vim main.yml
+  244  cd ../templates/
+  245  vim motd.j2
+  246  cat ../tasks/main.yml
+  247  cat ../defaults/main.yml 
+  248  q
+  249  vim motd.j2 
+  250  cd ../../../
+  251  ll
+  252  vim webserver1.yml 
+  253  ansible-playbook webserver1.yml 
+  254  vim roles/motd/defaults/main.yml 
+  255  ansible-playbook webserver1.yml 
+  256  vim roles/motd/defaults/main.yml 
+  257  ansible-playbook webserver1.yml 
+  258  vim roles/motd/tasks/main.yml 
+  259  ansible-playbook webserver1.yml 
+  260  vim roles/motd/tasks/main.yml 
+  261  ansible-playbook webserver1.yml 
+  262  vim roles/motd/tasks/main.yml 
+  263  ansible-playbook webserver1.yml 
+  264  pwd
+  265  cd roles/common/
+  266  ll
+  267  cd tasks/
+  268  vim main.yml 
+  269  vim ../../motd/tasks/main.yml 
+  270  cd ../
+  271  ll
+  272  vim tasks/
+  273  ll
+  274  cd tasks/
+  275  ll
+  276  vim cmon_pkg.yml
+  277  vim common_pkg.yml 
+  278  vim cmon_pkg.yml
+  279  vim main.yml 
+  280  vim ../../../webserver1.yml 
+  281  cd ../../../
+  282  ansible-playbook webserver1.yml 
+  283  vim roles/common/tasks/cmon_pkg.yml 
+  284  ansible-playbook webserver1.yml 
+  285  vim roles/common/tasks/cmon_pkg.yml 
+  286  vim roles/common/tasks/custom_apch.yml
+  287  vim roles/common/tasks/main.yml 
+  288  ansible-playbook webserver1.yml 
+  289  vim roles/common/tasks/custom_apch.yml
+  290  vim roles/common/tasks/cmon_pkg.yml 
+  291  vim roles/common/tasks/custom_apch.yml
+  292  ansible-playbook webserver1.yml 
+  293  vim roles/common/tasks/custom_apch.yml
+  294  ansible-playbook webserver1.yml 
+  295  vim roles/common/tasks/custom_apch.yml
+  296  ansible-playbook webserver1.yml 
+  297  vim roles/common/tasks/custom_apch.yml
+  298  ansible-playbook webserver1.yml 
+  299  vim roles/common/tasks/custom_apch.yml
+  300  ansible-playbook webserver1.yml 
+  301  dpkg --configure -a
+  302  ansible-playbook webserver1.yml 
+  303  vim roles/common/tasks/custom_apch.yml
+  304  vim roles/common/tasks/final_pkg.yml
+  305  vim roles/common/tasks/main.yml 
+  306  ansible-playbook webserver1.yml 
+  307  vim webserver1.yml 
+  308  vim roles/motd/templates/motd.j2 
+  309  vim roles/motd/defaults/
+  310  vim roles/motd/defaults/main.yml 
+  311  vim webserver1.yml 
+  312  ansible-playbook webserver1.yml 
+  313  vim roles/motd/templates/motd.j2 
+  314  ansible-playbook webserver1.yml 
+  315  vim roles/motd/templates/motd.j2 
+  316  vim roles/motd/defaults/main.yml 
+  317  ansible-playbook webserver1.yml 
+  318  git status
+  319  git config --name
+  320  git global username
+  321  git --global username
+  322  git branch
+  323  git status
+  324  git add .
+  325  git status
+  326  git commit -m "Ansible Practice Files"
+  327  git status
+  328  git remote add origin https://argadepp@bitbucket.org/argadepp/ansible_practice.git
+  329  git remote -v
+  330  git push master
+  331  git push origin master
+  332  git pull origin master
+  333  git push origin master
+  334  ll
+  335  vim /root/.ssh/id_rsa.pub 
+  336  git push origin master
+  337  git remote add origin git@bitbucket.org:argadepp/ansible_practice.git
+  338  git origin -v
+  339  git remoteorigin -v
+  340  git remote origin -v
+  341  git remote -v
+  342  git remote erase
+  343  git remote set-url --push --all git@bitbucket.org:argadepp/ansible_practice.git
+  344  git remote set-url --delete origin https://argadepp@bitbucket.org/argadepp/ansible_practice.git
+  345  git remote -v
+  346  git remote set-url --delete origin --all https://argadepp@bitbucket.org/argadepp/ansible_practice.git
+  347  git remote set-url --delete  https://argadepp@bitbucket.org/argadepp/ansible_practice.git
+  348  git remote set-url --delete origin --all https://argadepp@bitbucket.org/argadepp/ansible_practice.git
+  349  git init
+  350  git remote -v
+  351  ll
+  352  pwd
+  353  cd ../
+  354  ll
+  355  mkdir Ansibl_Pract
+  356  cp -r infra-automation/ Ansibl_Pract/.
+  357  cd Ansibl_Pract/
+  358  git init
+  359  git remote -v
+  360  git remote add origin git@bitbucket.org:argadepp/ansible_practice.git
+  361  ll
+  362  git status
+  363  git add .
+  364  cd infra-automation/
+  365  ll
+  366  git add .
+  367  git status
+  368  git remote -v
+  369  git remote push origin master
+  370  git push origin master
+  371  git checkout -b ansible
+  372  ll
+  373  git status
+  374  cd ../
+  375  ll
+  376  mkdir infra-automation1
+  377  cp -r infra-automation/* infra-automation1/.
+  378  cd infra-automation1/
+  379  ll
+  380  git init
+  381  git remote add origin git@github.com:argadepp/Ansible_Repo.git
+  382  vim /root/.ssh/id_rsa.pub 
+  383  git status
+  384  git add .
+  385  git commit -m "Ansible Practice"
+  386  git push origin master
+  387  history >> history.txt
